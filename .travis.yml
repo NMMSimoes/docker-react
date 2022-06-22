@@ -1,10 +1,9 @@
-language: generic 
 sudo: required
 services:
   - docker
 
 before_install:
-  - docker build -t nsimoes/docker-react -f Dockerfile.dev .
+  - docker build -t fuckyou -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true nsimoes/docker-react npm run test
+  - docker run -e CI=true fuckyou npm run test
