@@ -3,7 +3,20 @@ services:
   - docker
 
 before_install:
-  - docker build -t fuckyou -f Dockerfile.dev .
+  - docker build -t travistodocker -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true fuckyou npm run test
+  - docker run -e CI=true travistodocker npm run test
+
+
+deploy:
+  provider: elasticbeanstalk
+  region: us-east-1
+  app: "docker"
+  env: "Docker-env"
+  bucket_name: "elasticbeanstalk-us-east-1-674819646950"
+  bucket_path: "docker"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: "$AWS_SECRET_KEY"
