@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Hi jj fast gggfcvvxvvlklklklvvghh
+          just changed to a feature branch and make a with pull request
         </p>
         <a
           className="App-link"
